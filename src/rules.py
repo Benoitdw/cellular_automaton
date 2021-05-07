@@ -1,4 +1,4 @@
-from src.constantes import ALIVE, DEAD, kernel_3x3
+from utils import ALIVE, DEAD, kernel_3x3
 import numpy as np
 from scipy import signal
 

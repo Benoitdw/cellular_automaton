@@ -1,6 +1,6 @@
 import pygame
-from src.constantes import colors, CELL_WIDTH
-from src.render.matrix import Cells
+from utils import colors, CELL_WIDTH
+from cellular_automaton.src.matrix import Cells
 from typing import Tuple
 
 

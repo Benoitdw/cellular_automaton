@@ -1,9 +1,8 @@
 from typing import Tuple
-from dataclasses import dataclass
 import numpy as np
-from src.constantes import colors, CELL_WIDTH, color_ids
+from utils import colors, CELL_WIDTH, color_ids
 from pygame.gfxdraw import box
-from src.rules import Rules
+from rules import Rules
 
 
 class Cell:
