@@ -1,7 +1,8 @@
-from cellular_automaton.render import game
+from src.render import game
 from time import sleep
+from src.constantes import SPEED
 
-game = game.Game((100, 100))
+game = game.Game((1000, 1000))
 while 1:
     game.loop()
-    sleep(1)
+    sleep(SPEED)
