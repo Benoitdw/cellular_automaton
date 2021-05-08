@@ -7,7 +7,7 @@ from rules import Rules
 
 class Cell:
     def __init__(self, width: int, position: Tuple[int, int], color=str):
-        self.shape = self.set_shape(width)
+        self._shape = self.set_shape(width)
         self.position = self.set_position(position)
         self.color = colors[color]
 
@@ -15,8 +15,13 @@ class Cell:
     def set_shape(width: int) -> Tuple[int, int]:
         return width, width
 
+    def get_shape(self) -> Tuple[int, int]:
+        return tuple(width -1 for width in self._shape)
+
+    shape = property(get_shape, set_shape)
+
     def set_position(self, position: Tuple[int, int]) -> Tuple[int, int]:
-        return tuple(x * y for x, y in zip(self.shape, position))
+        return tuple(x * y for x, y in zip(self._shape, position))
 
 
 class Cells:
