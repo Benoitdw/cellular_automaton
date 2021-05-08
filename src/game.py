@@ -1,6 +1,6 @@
 import pygame
 import numpy as np
-from pygame.gfxdraw import box
+from pygame.gfxdraw import box, vline, hline
 from utils import colors, CELL_WIDTH, color_ids, SPEED, NB_STATE
 from cellular_automaton.src.matrix import Cells, Cell
 from typing import Tuple
@@ -31,6 +31,7 @@ class Game:
                 if event.type == pygame.QUIT:
                     pygame.quit()
 
+            self._display_lines()
             pygame.display.update()
             render(self.display, self.cells.matrix)
 
@@ -45,8 +46,15 @@ class Game:
         for matrix in self.cells:
             self.check_exit()
             render(self.display, matrix)
+            self._display_lines()
             pygame.display.update()
             sleep(SPEED)
+
+    def _display_lines(self):
+        for x in range(0,self.size[0], CELL_WIDTH) :
+            vline(self.display, x, 0, self.size[1], colors['BG'])
+        for y in range(0, self.size[1], CELL_WIDTH):
+            hline(self.display, 0,self.size[0], y,  colors['BG'])
 
     def check_exit(self):
         for event in pygame.event.get():
