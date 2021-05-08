@@ -1,7 +1,7 @@
 from typing import Tuple
 import numpy as np
 from utils import colors, CELL_WIDTH, color_ids
-from pygame.gfxdraw import box
+
 from rules import Rules
 
 
@@ -30,10 +30,9 @@ class Cells:
     def color_choice(self, value: int) -> str:
         return color_ids[str(value)]
 
-    def show(self, display):
-        array_old = self.matrix.copy()
-        self.apply_rule()
-        for x in range(self.shape[0]):
-            for y in range(self.shape[1]):
-                cell = Cell(CELL_WIDTH, (x, y), color_ids[array_old[x][y]+1])
-                box(display, (cell.position, cell.shape), cell.color)
+    def __iter__(self):
+        while True:
+            yield self.matrix
+            array_old = self.matrix.copy()
+            self.apply_rule()
+
