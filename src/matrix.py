@@ -21,7 +21,7 @@ class Cell:
 
 class Cells:
     def __init__(self, shape: Tuple[int, int]) -> None:
-        self.matrix = np.random.randint(0,2,shape, dtype=int)
+        self.matrix = np.zeros(shape, dtype=int)
         self.shape = shape
 
     def apply_rule(self) -> np.array:

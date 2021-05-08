@@ -5,13 +5,15 @@ colors = {
     'BLUE': (81, 113, 165),
     'VIOLET': (63, 48, 71),
 }
+
+NB_STATE = 2
 color_ids = {
     1: 'BLUE',
     2: 'VIOLET',
 }
 
 CELL_WIDTH = 20
-SPEED = 0.2
+SPEED = 0.02
 ALIVE = 1
 DEAD = 0
 

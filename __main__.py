@@ -3,4 +3,9 @@ from time import sleep
 from utils import SPEED
 
 game = game.Game((1000, 1000))
-game.loop()
+
+
+if game.is_new:
+    game.start()
+if not game.is_new:
+    game.play()
