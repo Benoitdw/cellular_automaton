@@ -2,7 +2,7 @@ import numpy as np
 
 colors = {
     'BG': (0, 16, 17),
-    'BLUE': (81, 113, 165),
+    'BLUE': (255, 230, 232),
     'VIOLET': (63, 48, 71),
 }
 

@@ -5,4 +5,4 @@ from utils import SPEED
 game = game.Game((1000, 1000))
 
 
-game.start()
+#game.start()
